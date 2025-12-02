@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="home-container">
+  <div class="page-container">
+    <h2>Bienvenido a CloudWorld!</h2>
+
+    <ion-button expand="block" color="tertiary" routerLink="/productos">
+      Ver Productos
+    </ion-button>
+
+    <ion-button expand="block" color="warning" routerLink="/carrito">
+      Ir al Carrito
+    </ion-button>
+
+    <ion-button expand="block" color="medium" (click)="obtenerUbicacion()">
+      Obtener ubicacion
+    </ion-button>
+
+    <div *ngIf="latitud && longitud" class="geo-info">
+      <p>Latitud: {{ latitud }}</p>
+      <p>Longitud: {{ longitud }}</p>
+    </div>
+    <div *ngIf="errorGeo" class="geo-error">
+      {{ errorGeo }}
+    </div>
+
+    <ion-button expand="block" color="danger" (click)="cerrarSesion()">
+      Cerrar Sesion
+    </ion-button>
+  </div>
+</ion-content>

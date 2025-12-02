@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "@angular/cli": "20.3.9"
+  },
+  "dependencies": {
+    "@capacitor/preferences": "^7.0.2"
+  }
+}

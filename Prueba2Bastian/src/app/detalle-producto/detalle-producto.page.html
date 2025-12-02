@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Detalle del Producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card *ngIf="producto; else sinProducto">
+    <ion-card-header>
+      <ion-card-title>{{ producto.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p *ngIf="producto.body">{{ producto.body }}</p>
+      <p>ID: {{ producto.id }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ng-template #sinProducto>
+    <p>No hay producto seleccionado. Vuelve a la lista de productos.</p>
+  </ng-template>
+
+  <ion-button expand="block" color="light" routerLink="/productos">
+    Volver a Productos
+  </ion-button>
+</ion-content>

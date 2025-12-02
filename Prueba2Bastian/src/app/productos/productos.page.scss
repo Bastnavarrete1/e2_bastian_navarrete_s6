@@ -1,0 +1,56 @@
+.productos-container {
+  padding: 16px;
+  min-height: 100vh;
+}
+
+ion-content {
+  --background: linear-gradient(135deg, #000000 0%, #4a4a4a 100%);
+}
+
+h2 {
+  text-align: center;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  animation: aparecer 0.5s ease-in;
+}
+
+ion-item {
+  --background: rgb(236, 236, 236);
+  margin: 10px 0;
+  border-radius: 8px;
+  
+  ion-label h3 { color: #191d16; font-weight: 600; }
+  ion-label p { color: #2e7d32; font-weight: bold; }
+  
+  &:nth-child(1) { animation: deslizarIzq 0.5s; }
+  &:nth-child(2) { animation: deslizarDer 0.5s; }
+}
+
+.botones {
+  margin-top: 20px;
+  gap: 10px;
+}
+
+ion-button {
+  animation: escalar 0.5s;
+  --color: white;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; } to { opacity: 1; }
+}
+
+@keyframes deslizarIzq {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes deslizarDer {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes escalar {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}

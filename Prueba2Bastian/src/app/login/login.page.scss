@@ -1,0 +1,117 @@
+.login-container {
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+ion-content {
+  --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+h2 {
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 40px;
+  animation: aparecer 0.8s ease-out;
+  
+  strong {
+    color: #ffd700;
+  }
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 30px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: deslizarArriba 0.6s 0.3s both;
+}
+
+ion-item {
+  --background: #f8f9fa;
+  --border-radius: 12px;
+  --border-color: #e2e8f0;
+  --border-width: 2px;
+  --border-style: solid;
+  margin: 15px 0;
+  animation: escalar 0.5s 0.5s both;
+  
+  &.item-has-focus {
+    --border-color: #667eea;
+  }
+  
+  &:nth-child(2) {
+    animation-delay: 0.7s;
+  }
+}
+
+ion-input {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --color: #2d3748;
+  --placeholder-color: #718096;
+  font-weight: 500;
+}
+
+ion-button {
+  margin-top: 20px;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: escalar 0.5s 0.9s both;
+  
+  &[color="success"] {
+    --background: #48bb78;
+    --background-hover: #38a169;
+    --background-activated: #2f855a;
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes deslizarArriba {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes escalar {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 15px;
+  }
+  
+  .form-container {
+    padding: 25px 15px;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+  }
+}

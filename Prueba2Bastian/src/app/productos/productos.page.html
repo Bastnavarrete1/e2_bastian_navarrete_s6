@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="productos-container">
+  <h2>Nuestros Productos (desde API)</h2>
+
+  <div *ngIf="cargando" class="estado-mensaje">
+    Cargando productos...
+  </div>
+
+  <div *ngIf="error" class="estado-mensaje error">
+    {{ error }}
+  </div>
+
+  <ion-list *ngIf="!cargando && !error">
+    <ion-item 
+      *ngFor="let p of productos" 
+      button 
+      detail="true" 
+      (click)="verDetalle(p)"
+      class="producto-item">
+      <ion-label>
+        <h3>{{ p.title }}</h3>
+        <p *ngIf="p.body">{{ p.body }}</p>
+        <p *ngIf="!p.body">ID: {{ p.id }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div class="botones-productos">
+    <ion-button 
+      expand="block" 
+      color="success" 
+      routerLink="/carrito">
+      Ver Carrito
+    </ion-button>
+
+    <ion-button 
+      expand="block" 
+      color="medium" 
+      routerLink="/home">
+      Volver al Inicio
+    </ion-button>
+  </div>
+</ion-content>
